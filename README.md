@@ -1,2 +1,2 @@
-# neural_network
-Perceptron Neural Network
+# Perceptron Neural Network
+Implementation of Perceptron Neural Network Model
