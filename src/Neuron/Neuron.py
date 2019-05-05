@@ -3,16 +3,18 @@ Created on 3 de mai de 2019
 
 @author: zeller
 '''
+from Neuron.Neuron_Validator.Validator import Validator
+from abc import ABC
 
-class Neuron():
+class Neuron(ABC):
     '''
     Representation of a single Neuron
     '''
 
-    def __init__(self, dendrite_weights, theta, validator, axions):
+    def __init__(self, dendrite_weights, theta, Validator):
         self.dendrite_weights = dendrite_weights
         self.theta = theta
-        self.validator = validator
-        self.axions = axions 
+        self.validator = Validator
+        self.axions = 0
         
         
