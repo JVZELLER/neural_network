@@ -7,7 +7,6 @@ from random import randint
 
 class Perceptron(Neuron):
     
-    def __init__(self, input_range):
-        self.theta = randint(0, 10)
+    def __init__(self, input_range, Validator):
         self.input_range = input_range
-        self.dendrite_weights = [randint(0, 10)] * input_range 
+        super().__init__([ [randint(0, 10) for i in range(2)] ] * self.input_range, randint(0, 10), Validator)
