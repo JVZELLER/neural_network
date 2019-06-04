@@ -16,5 +16,7 @@ class Neuron(ABC):
         self.theta = theta
         self.validator = Validator
         self.axions = 0
+        self.inputSynapse = 0.0
+        self.outputSynapse = 0.0
         
         
