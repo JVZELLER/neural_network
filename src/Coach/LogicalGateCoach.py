@@ -19,7 +19,7 @@ class LogicalGateCoach(object):
         self.output = output
 
     def online_coach(self):
-        
+        print(f'======================= Training =======================')
         while self.check_ansewer_values() == False:
             self.next_age()
             for index, trainset in enumerate(self.trainset):
@@ -35,12 +35,12 @@ class LogicalGateCoach(object):
                 else:
                     self.result[index] = perceptron_output
                     
-                        
-            print(f'Age: {self.age} | Error: {self.error} | Theta: {round(self.perceptron.theta, 2)} | Weights: {self.perceptron.dendrite_weights }')
+            print(f'\nAge: {self.age}\n-----')
+            print(f'Error: {self.error}\n-----\nTheta: {round(self.perceptron.theta, 2)}\n-----\nWeights: {self.perceptron.dendrite_weights }\n-----')
             for index, value in enumerate(self.result):
-                print(f'Perceptron Result: {self.trainset[0], self.trainset[1]} = {value} | Trainset: {self.trainset[0], self.trainset[1]} = {self.output[index]}')
+                print(f'Perceptron Result: {self.trainset[index][0], self.trainset[index][1]} = {value} | Trainset: {self.trainset[index][0], self.trainset[index][1]} = {self.output[index]}')
                     
-            
+        print(f'========================================================')    
     def next_age(self):
         self.age += 1
     
@@ -67,4 +67,6 @@ class LogicalGateCoach(object):
         
     def calculate_theta_value(self, index):
         self.perceptron.theta = self.perceptron.theta + ( self.error[index] * self.LEARNING_RATE ) 
+        
+
     
